@@ -35,18 +35,18 @@ class Pet
     return PetStore.new(pet_store_data)
   end
 
-  # Matthew did these parts alone:
+  # Matthew did the next two alone...
 
-  # def self.find_by_id(id)
-  #   sql = "SELECT * FROM pets WHERE id = #{id}"
-  #   pet_data = SqlRunner.run( sql ).first
-  #   return Pet.new(pet_data)
-  # end
+  def self.find_by_id(id)
+    sql = "SELECT * FROM pets WHERE id = #{id}"
+    pet_data = SqlRunner.run( sql ).first
+    return Pet.new(pet_data)
+  end
 
-  # def self.all()
-  #   sql = "SELECT * FROM pets"
-  #   pets_data = SqlRunner.run( sql )
-  #   return pets_data.map { |pet_data| PetStore.new( pet_data ) }
-  # end
+  def self.all()
+    sql = "SELECT * FROM pets"
+    pets_data = SqlRunner.run( sql )
+    return pets_data.map { |pet_data| PetStore.new( pet_data ) }
+  end
 
 end
